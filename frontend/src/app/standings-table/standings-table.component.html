@@ -1,0 +1,50 @@
+<header class="header">
+  <h2 class="title">2024 F1 Driver Standings</h2>
+</header>
+
+<div class="standings-container">
+  <!-- Search Filter-->
+  <mat-form-field appearance="outline" class="searchbar">
+    <mat-label>Search Driver/ Team</mat-label>
+    <input matInput [(ngModel)]="filterValue" (keyup)="applyFilter($event)" placeholder="Search Driver/Team">
+  </mat-form-field>
+  <!-- Table -->
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>POS</th>
+        <td mat-cell *matCellDef="let driver">{{ driver.position }}</td>
+      </ng-container>
+  
+      <!-- Driver Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Driver</th>
+        <td mat-cell *matCellDef="let driver"> {{ driver.first_name }} {{ driver.last_name }} </td>
+      </ng-container>
+
+      <!-- Driver Nationality Column -->
+      <ng-container matColumnDef="nationality">
+        <th mat-header-cell *matHeaderCellDef>Nationality</th>
+        <td mat-cell *matCellDef="let driver"> {{ driver.driver_country_code }} </td>
+      </ng-container>
+  
+      <!-- Team Column -->
+      <ng-container matColumnDef="team">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Team</th>
+        <td mat-cell *matCellDef="let driver">{{ driver.season_team_name }}</td>
+      </ng-container>
+  
+      <!-- Points Column -->
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef>Points</th>
+        <td mat-cell *matCellDef="let driver">{{ driver.season_points }}</td>
+      </ng-container>
+  
+      <!-- Table Header and Rows -->
+      <tr class="mat-header-row" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr class="mat-row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- Pagination -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+  </div>

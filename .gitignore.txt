@@ -1,0 +1,15 @@
+# C# build directories
+csharp-project/bin/
+csharp-project/obj/
+
+# Angular node_modules
+angular-project/node_modules/
+angular-project/dist/
+
+# IDE configuration files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

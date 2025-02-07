@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1C36FFB-5B80-4C89-8CA8-71A0AC50A5E7}|WebAPI\\WebAPI.csproj|c:\\users\\barry\\documents\\dev\\codingchallenge\\webapi\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C36FFB-5B80-4C89-8CA8-71A0AC50A5E7}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1C36FFB-5B80-4C89-8CA8-71A0AC50A5E7}|WebAPI\\WebAPI.csproj|c:\\users\\barry\\documents\\dev\\codingchallenge\\webapi\\webapi\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C36FFB-5B80-4C89-8CA8-71A0AC50A5E7}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1C36FFB-5B80-4C89-8CA8-71A0AC50A5E7}|WebAPI\\WebAPI.csproj|c:\\users\\barry\\documents\\dev\\codingchallenge\\webapi\\webapi\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C36FFB-5B80-4C89-8CA8-71A0AC50A5E7}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataController.cs",
+              "DocumentMoniker": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\WebAPI\\Controllers\\DataController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\DataController.cs",
+              "ToolTip": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\WebAPI\\Controllers\\DataController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\DataController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T12:15:31.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\WebAPI\\Program.cs",
+              "RelativeToolTip": "WebAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T12:10:19.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Data.cs",
+              "DocumentMoniker": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\WebAPI\\Data.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Data.cs",
+              "ToolTip": "C:\\Users\\barry\\Documents\\dev\\CodingChallenge\\WebAPI\\WebAPI\\Data.cs",
+              "RelativeToolTip": "WebAPI\\Data.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T12:10:06.637Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
