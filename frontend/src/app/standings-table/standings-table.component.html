@@ -1,13 +1,29 @@
 <header class="header">
+  <a href="https://www.redbullracing.com/int-en" target="_blank">
+    <img src="assets/images/redbull.png" alt="Clickable Image" class="headerlogo">
+  </a>
   <h2 class="title">2024 F1 Driver Standings</h2>
 </header>
 
 <div class="standings-container">
+  <div class="subheader">
+    <a href="https://www.oracle.com/uk/" target="_blank">
+      <img src="assets/images/oracle.png" alt="Clickable Image" class="clickable-image">
+    </a>
+    <a href="https://www.tagheuer.com/gb/en/" target="_blank">
+      <img src="assets/images/tagheuer.png" alt="Clickable Image" class="clickable-image">
+    </a>
+    <a href="https://www.honda.co.uk" target="_blank">
+      <img src="assets/images/honda.png" alt="Clickable Image" class="clickable-image">
+    </a>
+  </div>
+
   <!-- Search Filter-->
   <mat-form-field appearance="outline" class="searchbar">
     <mat-label>Search Driver/ Team</mat-label>
     <input matInput [(ngModel)]="filterValue" (keyup)="applyFilter($event)" placeholder="Search Driver/Team">
   </mat-form-field>
+  
   <!-- Table -->
   <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" class="mat-elevation-z8">
     <!-- Position Column -->

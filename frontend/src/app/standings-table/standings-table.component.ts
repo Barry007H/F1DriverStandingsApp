@@ -19,7 +19,6 @@ export class StandingsTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  // Filter string
   filterValue: string = '';
 
   constructor(private fetchDrivers: FetchdriversService) {}
@@ -32,18 +31,19 @@ export class StandingsTableComponent implements OnInit {
   {
     this.fetchDrivers.getStandings(year).subscribe(
       (drivers: Driver[]) => {
-        console.log(drivers)
         this.drivers = drivers;
         this.dataSource = new MatTableDataSource(this.drivers);
         this.calculateDriverPositions();
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
 
-        // Custom filter logic for driver name or team
         this.dataSource.filterPredicate = (driver: Driver, filter: string) => {
         const filterValue = filter.toLowerCase();
         const fullName = `${driver.first_name} ${driver.last_name}`.toLowerCase();
-        return fullName.includes(filterValue) || driver.season_team_name.toLowerCase().includes(filterValue);
+        
+        return fullName.includes(filterValue) 
+            || driver.season_team_name.toLowerCase().includes(filterValue) 
+            || driver.driver_country_code.toLowerCase().includes(filterValue);
       };
       },
       (error) => {
@@ -52,27 +52,22 @@ export class StandingsTableComponent implements OnInit {
     );
   }
 
-  // Sort drivers by points and assign positions
   calculateDriverPositions(): void {
-    // Sort drivers by season points in descending order
     this.sortedDrivers = [...this.drivers].sort((a, b) => b.season_points - a.season_points);
 
-    // Assign position to each driver based on sorted order
     this.sortedDrivers.forEach((driver, index) => {
-      driver.position = index + 1;  // Position starts from 1
+      driver.position = index + 1;
     });
   }
 
-  // Custom sorting logic
   sortData(sort: Sort): void {
-    const data = this.drivers.slice(); // Create a copy of the data array
+    const data = this.drivers.slice();
 
     if (!sort.active || sort.direction === '') {
-      this.dataSource.data = data; // If no sorting active, reset to default
+      this.dataSource.data = data;
       return;
     }
 
-    // Sort logic for specific columns
     this.dataSource.data = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
@@ -88,19 +83,16 @@ export class StandingsTableComponent implements OnInit {
     });
   }
 
-  // Compare function for sorting
   compare(a: number, b: number, isAsc: boolean): number {
     return (a - b) * (isAsc ? 1 : -1);
   }
 
-  // Compare function for names (alphabetical)
   compareNames(firstNameA: string, lastNameA: string, firstNameB: string, lastNameB: string, isAsc: boolean): number {
     const nameA = `${firstNameA} ${lastNameA}`;
     const nameB = `${firstNameB} ${lastNameB}`;
     return this.compareStrings(nameA, nameB, isAsc);
   }
 
-  // Compare function for strings (e.g., team names)
   compareStrings(a: string, b: string, isAsc: boolean): number {
     const comparison = a.localeCompare(b);
     return isAsc ? comparison : -comparison;
@@ -119,5 +111,4 @@ export class StandingsTableComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
 }

@@ -7,7 +7,12 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class DataController : ControllerBase
     {
-        
+        private readonly IConfiguration _configuration;
+        public DataController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [HttpGet("{year}", Name = "GetDriverStandings")]
         public async Task<List<Data>> Get(string year)
         {
@@ -16,15 +21,14 @@ namespace WebAPI.Controllers
                 throw new HttpRequestException("Invalid year format. Please provide a valid year");
             }
 
-
-            // In reality these would be set in environment variable
-            string url = $"https://pitwall.redbullracing.com/api/standings/drivers/{year}";
-            string apiKey = "7303c8ef-d91a-4964-a7e7-78c26ee17ec4";
+            string urlBase = _configuration["DriverStandingsAPI:Url"] ?? throw new Exception("Api Url not set");
+            string apiKey = _configuration["DriverStandingsAPI:ApiKey"] ?? throw new Exception("Api Key not set");
 
             using (HttpClient client = new HttpClient())
             {
-                // Add x-api-key header
                 client.DefaultRequestHeaders.Add("x-api-key", apiKey);
+
+                string url = $"{urlBase}{year}";
 
                 try
                 {
@@ -46,8 +50,5 @@ namespace WebAPI.Controllers
                 }
             }
         }
-
-
-
     }
 }

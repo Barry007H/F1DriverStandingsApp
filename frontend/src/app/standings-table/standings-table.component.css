@@ -1,10 +1,7 @@
 .header {
     width: 100%;
-    background: linear-gradient(to right, #ea1d2d, #001a30);
+    background: linear-gradient(to right, #001a30, #ea1d2d, #ea1d2d, #fcd700);
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -14,7 +11,7 @@
 
 .title {
     font-family: 'FuturaPTMedium', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 255, 255, 0.4);
@@ -27,10 +24,30 @@
 }
 
 .searchbar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
     position: relative;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+}
+
+.headerlogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    position: absolute;
+    padding-left: 30px;
+}
+
+.subheader {
+    display: flex;
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Centers images vertically (if needed) */
+    gap: 100px; /* Space of 100px between images */
+    flex-wrap: wrap; /* Ensures wrapping if needed */
 }
 
 .mat-header-row {
@@ -47,4 +64,11 @@
     background-color: #001a30;
     color: #a8a9ac;
 }
-  
+
+.searchbar .mat-form-field-label {
+    color: white; /* Label color */
+}
+
+.searchbar .mat-input-element {
+    color: white; /* Text color */
+}
